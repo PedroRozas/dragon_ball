@@ -1,0 +1,80 @@
+.filter-box {
+  position: absolute;
+  flex-direction: column;
+  top: 9%;
+  left: 80%;
+  background: white;
+  height: 40px;
+  border-radius: 40px;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.filter-box:hover {
+  width: 230px;
+  cursor: pointer;
+}
+
+.filter-box:hover>.filtertitle{
+  display: none;
+  opacity: 0;
+  width: 0;
+}
+.test{
+  opacity: 0;
+  width: 0;
+  transition: 0.5s;
+  border-radius: 100px;
+  font-size: 16px;
+  margin: auto;
+}
+
+.filtertitle{
+  font-family: 'inter';
+  font-size: 16px;
+  font-weight: normal;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 200px;
+  color: white;
+  position: absolute;
+  top: 100%;
+  left:-80%;
+  z-index: 0;
+  opacity: 1;
+}
+
+.filter-box:hover>.filter-btn {
+  background: white;
+  color: black;
+}
+
+.filter-btn {
+  color: black;
+  float: left;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mySelect[class*="-container"] {
+  display: none;
+  height: auto;
+  border-radius: 50%;
+  transition: 3s ease-in-out;
+  width: 0px;
+}
+.filter-box:hover>.mySelect[class*="-container"]
+{
+  display: block;
+  width: 220px;
+  cursor: pointer;
+  
+}
