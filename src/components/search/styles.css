@@ -1,6 +1,6 @@
 .search-box {
   position: absolute;
-  top: 15%;
+  top: 10%;
   left: 20%;
   background: white;
   height: 40px;
@@ -55,5 +55,5 @@
   font-weight: normal;
   color: white;
   margin-left: 15.5%;
-  margin-top: 11%;
+  margin-top: 8%;
 }
