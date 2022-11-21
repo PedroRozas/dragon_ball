@@ -8,7 +8,8 @@ export default function Character() {
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [items, setItems] = useState([]);
-  const url = "https://dragon-ball-super-api.herokuapp.com/api/characters/" + name;
+  const [url, setUrl] = useState("");
+  setUrl("https://dragon-ball-super-api.herokuapp.com/api/characters/" + name)
 
   useEffect(() => {
     const request_options = {
@@ -30,7 +31,7 @@ export default function Character() {
           setError(error);
         }
       );
-  }, []);
+  }, [url]);
 
   if (error) {
     return <>{error.message}</>;

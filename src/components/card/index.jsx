@@ -12,14 +12,14 @@ function Card(props) {
         .filter((item) => {
           if (props.Search === "" && list.length === 0) {
             return item;
-          } else if (props.Search !== "" && list.length === 0) {
-            return item.name.toLowerCase().includes(props.Search.toLowerCase());
-          } else if (list.length !== 0 && props.Search === "") {
-            return list.includes(item.universe);
-          } else if (list.length !== 0 && props.Search !== "") {
-            return list.includes(item.universe) && item.name.toLowerCase().includes(props.Search.toLowerCase()
-            );
+          } else if (item.name.toLowerCase().includes(props.Search.toLowerCase()) && list.length === 0) {
+            return item
+          } else if (list.includes(item.universe) && props.Search === "") {
+            return item
+          } else if (list.includes(item.universe) && item.name.toLowerCase().includes(props.Search.toLowerCase())) {
+            return item
           }
+          else{return item}
         })
         .map((item, key) => (
           <div className="cards" key={key}>
