@@ -2,15 +2,12 @@ import logo from "../logo/dragon_ball_super.png";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-
 export default function Character() {
   const location = useLocation();
   const { name } = location.state;
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [items, setItems] = useState([]);
-  const [url, setUrl] = useState("");
-  setUrl("https://dragon-ball-super-api.herokuapp.com/api/characters/" + name);
 
   useEffect(() => {
     const request_options = {
@@ -18,7 +15,7 @@ export default function Character() {
     };
 
     fetch(
-      url,
+      "https://dragon-ball-super-api.herokuapp.com/api/characters/" + name,
       request_options
     )
       .then((res) => res.json())
@@ -32,7 +29,7 @@ export default function Character() {
           setError(error);
         }
       );
-  }, [url]);
+  }, [name]);
 
   if (error) {
     return <>{error.message}</>;
@@ -42,15 +39,15 @@ export default function Character() {
     if (items.transform === null) {
       items.transform = "Desconocido";
     }
-    
     return (
       <>
         <div className="Characterpage">
           <Link to="/">
             <div className="backbutton">
-              <i className="arrow left"></i>Ir a inicio</div>
+              <i className="arrow left"></i>volver atras</div>
           </Link>
           <Link to="/">
+            {" "}
             <div>
               <img src={logo} alt="background" className="logopage2" />
             </div>
@@ -118,6 +115,3 @@ export default function Character() {
     );
   }
 }
-
-  
-

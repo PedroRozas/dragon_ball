@@ -20,7 +20,7 @@ function Card(props) {
           } else if (list.includes(item.universe) && item.name.toLowerCase().includes(props.Search.toLowerCase())) {
             return item
           }
-          else{return item}
+          
         })
         .map((item, key) => (
           <div className="cards" key={key}>
@@ -31,10 +31,9 @@ function Card(props) {
             </div>
             <Link
               to={`/characters`}
-              resizeMode="contain"
               state={{ name: item.name }}
             >
-              <button className="cardbutton">Ver ficha</button>
+            <button className="cardbutton">Ver ficha</button>
             </Link>
           </div>
         ))}
@@ -42,4 +41,4 @@ function Card(props) {
   );
 }
 
-export default React.memo(Card);
+export default Card;
