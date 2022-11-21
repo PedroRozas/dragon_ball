@@ -17,9 +17,7 @@ function Card(props) {
           } else if (list.length !== 0 && props.Search === "") {
             return list.includes(item.universe);
           } else if (list.length !== 0 && props.Search !== "") {
-            return (
-              list.includes(item.universe) &&
-              item.name.toLowerCase().includes(props.Search.toLowerCase())
+            return list.includes(item.universe) && item.name.toLowerCase().includes(props.Search.toLowerCase()
             );
           }
         })

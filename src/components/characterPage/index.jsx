@@ -8,6 +8,7 @@ export default function Character() {
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [items, setItems] = useState([]);
+  const url = "https://dragon-ball-super-api.herokuapp.com/api/characters/" + name;
 
   useEffect(() => {
     const request_options = {
@@ -15,7 +16,7 @@ export default function Character() {
     };
 
     fetch(
-      "https://dragon-ball-super-api.herokuapp.com/api/characters/" + name,
+      url,
       request_options
     )
       .then((res) => res.json())
