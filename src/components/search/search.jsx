@@ -1,4 +1,5 @@
 import "./styles.css";
+import React from "react";
 
 function Search(props) {
   return (
@@ -21,4 +22,4 @@ function Search(props) {
   );
 }
 
-export default Search;
+export default React.memo(Search);

@@ -1,6 +1,7 @@
 import Card from "../card/index";
+import React from "react";
 
-export default function mainContainer(props) {
+function mainContainer(props) {
   return (
     <>{/* Este es un contenedor para cada card, de esta forma me aseguro
     que puedan quedar ordenadas y puedo controlar cuanto crecen*/}
@@ -14,3 +15,5 @@ export default function mainContainer(props) {
     </>
   );
 }
+
+export default React.memo(mainContainer);

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React from "react";
 
 function Card(props) {
   const list = props.Universe.map((item) => item.value);
@@ -41,4 +42,4 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default React.memo(Card);

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+  const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   const [universes, setUniverses] = useState([]);
   useEffect(() => {
@@ -22,19 +22,15 @@ function App() {
       .then(
         (result) => {
           setLoaded(true);
-          setItems(result);
+          setData(Object.values(result));
         },
         (error) => {
           setLoaded(true);
           setError(error);
-        }
+        }, 
       );
   }, []);
-  const data = Object.values(items);
-  const unique = [...new Set(data.map((data) => data.universe))];
-  unique.sort(function (a, b) {
-    return a - b;
-  });
+ 
   if (error) {
     return <>{error.message}</>;
   } else if (!loaded) {
@@ -46,7 +42,6 @@ function App() {
          se la envio a los componentes secundarios*/}
         <Header
           State={setSearch}
-          universe={unique}
           setUniverse={setUniverses}
         />
         <Container info={data} Search={search} Universe={universes} />

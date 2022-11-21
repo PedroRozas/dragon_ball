@@ -1,5 +1,6 @@
 import "./styles.css";
 import Select from "react-select";
+import React from "react";
 
 const options = [
   { value: "0", label: "Universo 0" },
@@ -45,7 +46,7 @@ function Filter(props) {
           closeMenuOnSelect={false}
           autoFocus={false}
           styles={customStyles}
-          onChange={handleSelect}
+          onChange={()=>handleSelect}
           placeholder="Filtrar por universo"
           label="Universo"
           isMulti
@@ -57,4 +58,4 @@ function Filter(props) {
   );
 }
 
-export default Filter;
+export default React.memo(Filter);
