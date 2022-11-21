@@ -46,7 +46,7 @@ function Filter(props) {
           closeMenuOnSelect={false}
           autoFocus={false}
           styles={customStyles}
-          onChange={()=>handleSelect}
+          onChange={handleSelect}
           placeholder="Filtrar por universo"
           label="Universo"
           isMulti
